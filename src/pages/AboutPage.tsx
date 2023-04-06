@@ -51,7 +51,7 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
             {skillSet.stacks.map((skill: Skill) => (
               <div
                 key={skill.name}
-                className="m-6 flex w-1/3 flex-shrink-0 flex-grow-0 flex-col items-center justify-center"
+                className="m-6 flex w-1/3 flex-shrink-0 flex-grow-0 flex-col items-center justify-center text-center"
               >
                 <img
                   src={`/icons/${skill.img}`}

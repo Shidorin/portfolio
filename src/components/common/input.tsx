@@ -1,7 +1,7 @@
 import { InputProps } from "../../types";
 
 export const Input = ({
-  className = "focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-dark shadow focus:outline-none",
+  className = "focus:border-primaryText w-full appearance-none rounded border px-3 py-2 leading-tight border-dark text-dark shadow focus:outline-none",
   id,
   name,
   type,
