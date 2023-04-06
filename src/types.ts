@@ -21,6 +21,8 @@ export interface ContactFormData {
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   submitting?: boolean;
+  isSuccess?: boolean;
+  isFailure?: boolean;
   className?: string;
   children?: React.ReactNode;
 }

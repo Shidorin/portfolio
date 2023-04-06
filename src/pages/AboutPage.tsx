@@ -70,7 +70,7 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section ref={ref} className="">
       <div
-        className="clip-mobile-container md:clip-container relative overflow-hidden
+        className="max-md:clip-mobile-container md:clip-container relative overflow-hidden
       bg-primaryText py-20 md:pb-64"
       >
         <h2 className="mx-auto w-fit pb-10 text-5xl text-white">Skills</h2>

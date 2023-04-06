@@ -11,6 +11,9 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [isFailure, setIsFailure] = useState<boolean>(false);
+
   const formRef = useRef<HTMLFormElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -59,10 +62,17 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         easing: "easeInOutQuad",
       }).finished;
     }
+    setTimeout(() => {
+      setIsSuccess(true);
+      setIsFailure(false);
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 4000);
+    }, 2000);
 
-    console.log(formData);
+    setIsSuccess(false);
+    setIsFailure(false);
   };
-
 
   return (
     <section ref={ref} className="relative mx-auto w-auto max-w-7xl px-4 py-20">
@@ -106,7 +116,12 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
           />
         </div>
         <div className="flex justify-center">
-          <Button submitting={isSubmitting} ref={buttonRef}>
+          <Button
+            submitting={isSubmitting}
+            ref={buttonRef}
+            isSuccess={isSuccess}
+            isFailure={isFailure}
+          >
             {isSubmitting ? "Sending" : "Contact me"}
           </Button>
         </div>
