@@ -18,9 +18,9 @@ export interface ContactFormData {
   message: string;
 }
 
-export interface ButtonProps {
-  onClick?: () => void;
-  disabled?: boolean;
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  submitting?: boolean;
   className?: string;
   children?: React.ReactNode;
 }
