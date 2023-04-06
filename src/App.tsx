@@ -38,7 +38,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className="app font-mono">
       <Navbar scrollToRef={handleScroll} />
       <main className="">
         <HomePage ref={homeRef} />
