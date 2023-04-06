@@ -71,12 +71,12 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
     <section ref={ref} className="">
       <div
         className="clip-mobile-container md:clip-container relative overflow-hidden
-      bg-primaryText py-20 md:pb-80"
+      bg-primaryText py-20 md:pb-64"
       >
         <h2 className="mx-auto w-fit pb-10 text-5xl text-white">Skills</h2>
         <div
           className="mx-auto flex max-w-7xl flex-col text-white
-          opacity-0 md:flex-row md:pb-20"
+          opacity-0 md:flex-row "
           ref={skillRef}
         >
           {skillsTSX}

@@ -3,11 +3,12 @@ export const data = {
     {
       title: "Frontend",
       stacks: [
-        { name: "JavaScript", img: "javascript.png" },
-        { name: "React", img: "react.png" },
-        { name: "Redux", img: "redux.png" },
         { name: "HTML5", img: "html5.png" },
         { name: "CSS3", img: "css.png" },
+        { name: "JavaScript", img: "javascript.png" },
+        { name: "TypeScript", img: "typescript.png" },
+        { name: "React", img: "react.png" },
+        { name: "Redux", img: "redux.png" },
       ],
     },
     {
