@@ -7,6 +7,7 @@ module.exports = {
         dark: "rgb(13, 15, 17)",
         bgColor: "white",
         primaryText: "#3182ce",
+        secondaryText: "#6fa8dd",
       },
     },
   },
