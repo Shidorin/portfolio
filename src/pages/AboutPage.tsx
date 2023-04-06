@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { Skill, SkillsData } from "../types";
-import { data, data2 } from "../data/data";
+import { data } from "../data/data";
 import anime from "animejs";
 
 const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
@@ -11,7 +11,7 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
     const fetchData = async () => {
       // const response = await fetch("../data/data.json");
       // const data = await response.json();
-      setSkillsData(data2);
+      setSkillsData(data);
     };
 
     fetchData();
