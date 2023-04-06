@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
+import Navbar from "./components/Navbar/Navbar";
+import { useRef } from "react";
 
 function App() {
+  const homeRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (path: string) => {
+    let ref;
+    switch (path) {
+      case "#":
+        ref = homeRef;
+        break;
+      case "#about":
+        ref = aboutRef;
+        break;
+      case "#projects":
+        ref = projectsRef;
+        break;
+      case "#contact":
+        ref = contactRef;
+        break;
+      default:
+        break;
+    }
+
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar scrollToRef={handleScroll} />
+      <main className="">
+        <HomePage ref={homeRef} />
+        <AboutPage ref={aboutRef} />
+        <ProjectsPage ref={projectsRef} />
+        <ContactPage ref={contactRef} />
+      </main>
     </div>
   );
 }
 
+// <Routes>
+//   <Route path="/projects" element={<ProjectsPage />} />
+//   <Route path="/contact" element={<ContactPage />} />
+// </Routes>
 export default App;
