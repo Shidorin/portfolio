@@ -62,13 +62,31 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         easing: "easeInOutQuad",
       }).finished;
     }
-    setTimeout(() => {
-      setIsSuccess(true);
-      setIsFailure(false);
-      setTimeout(() => {
-        setIsSubmitting(false);
-      }, 4000);
-    }, 2000);
+    // setTimeout(() => {
+    //   setIsSuccess(true);
+    //   setIsFailure(false);
+    //   setTimeout(() => {
+    //     setIsSubmitting(false);
+    //   }, 4000);
+    // }, 2000);
+
+    fetch("../netlify/contact", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        setIsSuccess(true);
+        setIsFailure(false);
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        setIsSuccess(false);
+        setIsFailure(true);
+      });
 
     setIsSuccess(false);
     setIsFailure(false);
