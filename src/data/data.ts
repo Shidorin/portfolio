@@ -1,4 +1,4 @@
-export const data = {
+export const skillData = {
   skills: [
     {
       title: "Frontend",
@@ -29,6 +29,59 @@ export const data = {
         { name: "MaterialUI", img: "mui.png" },
         { name: "Bootstrap", img: "bootstrap.png" },
       ],
+    },
+  ],
+};
+
+export const projectsData = {
+  projects: [
+    {
+      id: "1",
+      title: "Portfolio",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat tortor nunc, vel bibendum sem vestibulum et. Vivamus vel luctus purus. Mauris fermentum libero at felis tempor lobortis. Nunc ullamcorper felis ut est laoreet fringilla. Sed commodo bibendum sapien, ac imperdiet nisi commodo a.",
+      image: "portfolio.png",
+      imageMobile: "portfolio-mobile.png",
+      technologies: [
+        { name: "TypeScript", img: "typescript.png" },
+        { name: "React", img: "react.png" },
+        { name: "Tailwind", img: "tailwind.png" },
+        { name: "Anime.js", img: "animejs.png" },
+      ],
+      demoLink: "demolink",
+      sourceCodeLink: "gitlink",
+    },
+    {
+      id: "2",
+      title: "eBookshelf",
+      description: "dummy data",
+      image: "portfolio.png",
+      imageMobile: "portfolio-mobile.png",
+      technologies: [
+        { name: "JavaScript", img: "javascript.png" },
+        { name: "React", img: "react.png" },
+        { name: "MaterialUI", img: "mui.png" },
+        { name: "Node", img: "node.png" },
+        { name: "Express", img: "express.png" },
+        { name: "Sequelize ORM", img: "sequelize.png" },
+      ],
+      demoLink: "",
+      sourceCodeLink: "",
+    },
+    {
+      id: "3",
+      title: "Hotelio",
+      description: "dummy data",
+      image: "portfolio.png",
+      imageMobile: "portfolio-mobile.png",
+      technologies: [
+        { name: "TypeScript", img: "typescript.png" },
+        { name: "React", img: "react.png" },
+        { name: "Redux", img: "redux.png" },
+        { name: "CSS", img: "css.png" },
+      ],
+      demoLink: "",
+      sourceCodeLink: "",
     },
   ],
 };
