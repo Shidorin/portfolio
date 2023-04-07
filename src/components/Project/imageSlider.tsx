@@ -84,7 +84,7 @@ const ImageSlider = ({ title, images }: IImageSlider) => {
             >
               <img
                 src={`/images/${image}`}
-                alt={`${title}-image-${index}`}
+                alt={`${title}-${index}`}
                 className="h-80 w-full object-contain object-center brightness-90 filter"
               />
             </div>
@@ -103,7 +103,7 @@ const ImageSlider = ({ title, images }: IImageSlider) => {
         <img
           className="h-auto w-full object-cover object-center brightness-75 filter"
           src={`/images/${images[0]}`}
-          alt={"image of " + title}
+          alt={title}
         ></img>
         <img
           className="absolute bottom-8 right-8 object-contain filter md:h-64 lg:h-80 xl:h-96"
