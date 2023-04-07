@@ -91,10 +91,18 @@ const ImageSlider = ({ title, images }: IImageSlider) => {
           ))}
         </div>
         <div className="absolute inset-0 flex items-center justify-between">
-          <button onClick={nextImage} className="rounded-full text-primaryText">
+          <button
+            onClick={nextImage}
+            className="rounded-full text-primaryText"
+            aria-label="left"
+          >
             <MdKeyboardArrowLeft className="h-24 w-8" />
           </button>
-          <button onClick={prevImage} className="rounded-full text-primaryText">
+          <button
+            onClick={prevImage}
+            className="rounded-full text-primaryText"
+            aria-label="right"
+          >
             <MdKeyboardArrowRight className="h-24 w-6" />
           </button>
         </div>

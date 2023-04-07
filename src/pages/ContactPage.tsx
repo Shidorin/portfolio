@@ -62,32 +62,37 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         easing: "easeInOutQuad",
       }).finished;
     }
-    // setTimeout(() => {
-    //   setIsSuccess(true);
-    //   setIsFailure(false);
-    //   setTimeout(() => {
-    //     setIsSubmitting(false);
-    //   }, 4000);
-    // }, 2000);
+    setTimeout(() => {
+      setIsSuccess(true);
+      setIsFailure(false);
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 4000);
+    }, 2000);
 
-    fetch("../netlify/contact", {
-      method: "POST",
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        setIsSuccess(true);
-        setIsFailure(false);
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
-      })
-      .catch((error) => {
-        setIsSuccess(false);
-        setIsFailure(true);
-      });
+    // try {
+    //   const response = await fetch("/.netlify/functions/contact", {
+    //     method: "POST",
+    //     body: JSON.stringify(formData),
+    //   });
+    //   if (response.ok) {
+    //     setIsSuccess(true);
+    //     setIsFailure(false);
+    //     setFormData({
+    //       name: "",
+    //       email: "",
+    //       message: "",
+    //     });
+    //   } else {
+    //     setIsSuccess(false);
+    //     setIsFailure(true);
+    //   }
+    // } catch (error) {
+    //   setIsSuccess(false);
+    //   setIsFailure(true);
+    // }
 
+    setIsSubmitting(false);
     setIsSuccess(false);
     setIsFailure(false);
   };

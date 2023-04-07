@@ -40,7 +40,11 @@ const DesktopNav = ({ scrollToRef }: NavbarProps) => {
           className="ml-4 inline"
           onClick={() => scrollToRef(link.path)}
         >
-          <button type="button" className="button-primary">
+          <button
+            type="button"
+            className="button-primary"
+            aria-label={link.name}
+          >
             {link.name}
           </button>
         </div>

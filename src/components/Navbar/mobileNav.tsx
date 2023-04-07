@@ -48,19 +48,24 @@ const MobileNav = ({ scrollToRef }: NavbarProps) => {
         ref={burgerRef}
       >
         <div className="flex flex-col items-end justify-end">
-          <button onClick={() => setIsOpen(false)} className=" p-2 text-white">
+          <button
+            onClick={() => setIsOpen(false)}
+            className=" p-2 text-white"
+            aria-label="close"
+          >
             CLOSE
           </button>
         </div>
         <div className="flex flex-grow flex-col items-end justify-end">
           {links.map((link) => (
-            <div
+            <button
               key={link.path}
               className="mt-1 block cursor-pointer rounded py-1.5 text-2xl font-medium uppercase text-white hover:text-primaryText"
               onClick={() => handleBurger(link.path)}
+              aria-label={link.name}
             >
               {link.name}
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -72,6 +77,7 @@ const MobileNav = ({ scrollToRef }: NavbarProps) => {
       <button
         className="flex items-center rounded border border-gray-600 px-3 py-2 text-dark hover:border-primaryText hover:text-primaryText"
         onClick={handleToggle}
+        aria-label="menu"
       >
         <svg
           className="h-3 w-3 fill-current"
