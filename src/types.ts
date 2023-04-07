@@ -39,3 +39,18 @@ export interface InputProps {
   required?: boolean;
   placeholder?: string;
 }
+
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  imageMobile: string;
+  technologies: Skill[];
+  demoLink: string;
+  sourceCodeLink: string;
+}
+
+export interface IProjectData {
+  projects: Project[];
+}
