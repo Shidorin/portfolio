@@ -47,7 +47,7 @@ const MobileNav = ({ scrollToRef }: NavbarProps) => {
         className="flex h-screen flex-col justify-between px-4 py-4 opacity-0"
         ref={burgerRef}
       >
-        <div className="flex flex-col items-end justify-end">
+        <div className="flex flex-col items-end justify-end ">
           <button
             onClick={() => setIsOpen(false)}
             className=" p-2 text-white"
@@ -56,7 +56,7 @@ const MobileNav = ({ scrollToRef }: NavbarProps) => {
             CLOSE
           </button>
         </div>
-        <div className="flex flex-grow flex-col items-end justify-end">
+        <div className="flex flex-grow flex-col items-end justify-end pb-8 ">
           {links.map((link) => (
             <button
               key={link.path}
