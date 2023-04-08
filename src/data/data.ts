@@ -26,7 +26,7 @@ export const skillData = {
         { name: "Agile", img: "agile.png" },
         { name: "Git", img: "git.png" },
         { name: "Tailwind", img: "tailwind.png" },
-        { name: "MaterialUI", img: "mui.png" },
+        { name: "MaterialUI", img: "mui3.png" },
         { name: "Bootstrap", img: "bootstrap.png" },
       ],
     },
