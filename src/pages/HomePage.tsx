@@ -66,7 +66,7 @@ const HomePage = forwardRef<HTMLDivElement>((props, ref) => {
   };
 
   return (
-    <section className="relative mx-auto min-h-screen w-auto max-w-7xl px-4">
+    <section className="relative mx-auto min-h-[100dvh] w-auto max-w-7xl px-4">
       <div
         className="justify-center pt-28 text-dark md:pt-60 xl:pt-72"
         ref={ref}
