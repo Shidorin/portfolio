@@ -41,7 +41,7 @@ function App() {
     <div className="app font-mono">
       <Navbar scrollToRef={handleScroll} />
       <main className="">
-        <HomePage ref={homeRef} />
+        <HomePage ref={homeRef} scrollToRef={handleScroll} />
         <AboutPage ref={aboutRef} />
         <ProjectsPage ref={projectsRef} />
         <ContactPage ref={contactRef} />

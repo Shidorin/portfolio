@@ -103,7 +103,7 @@ const ImageSlider = ({ title, images }: IImageSlider) => {
             className="rounded-full text-primaryText"
             aria-label="right"
           >
-            <MdKeyboardArrowRight className="h-24 w-6" />
+            <MdKeyboardArrowRight className="h-24 w-8" />
           </button>
         </div>
       </div>

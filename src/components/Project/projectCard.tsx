@@ -54,20 +54,26 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       ></img> */}
       <div className="mb-4 flex flex-col md:mt-2 md:flex-row-reverse">
         <div className="mb-4 ml-auto flex gap-x-4">
-          <Link
-            className="flex items-center gap-x-1 hover:text-primaryText"
-            to={project.demoLink}
-          >
-            {"Visit the site"}
-            <HiOutlineLink />
-          </Link>
-          <Link
-            className="flex items-center gap-x-1 hover:text-primaryText"
-            to={project.sourceCodeLink}
-          >
-            {"See the code"}
-            <FaGithub />
-          </Link>
+          {project.demoLink && (
+            <Link
+              className="flex items-center gap-x-1 hover:text-primaryText"
+              to={project.demoLink}
+              target="_blank"
+            >
+              {"Visit the site"}
+              <HiOutlineLink />
+            </Link>
+          )}
+          {project.sourceCodeLink && (
+            <Link
+              className="flex items-center gap-x-1 hover:text-primaryText"
+              to={project.sourceCodeLink}
+              target="_blank"
+            >
+              {"See the code"}
+              <FaGithub />
+            </Link>
+          )}
         </div>
         <h3 className="text-5xl text-dark">{project.title}</h3>
       </div>
