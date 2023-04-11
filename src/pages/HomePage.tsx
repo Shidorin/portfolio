@@ -61,15 +61,6 @@ const HomePage = forwardRef<HTMLDivElement, IHomeProps>(
         );
     }, []);
 
-    const scrollDown = () => {
-      const windowHeight = window.innerHeight;
-      window.scrollBy({
-        top: windowHeight,
-        left: 0,
-        behavior: "smooth",
-      });
-    };
-
     return (
       <section className="relative mx-auto min-h-[100dvh] w-auto max-w-7xl px-4">
         <div
