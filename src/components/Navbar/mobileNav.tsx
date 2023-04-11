@@ -44,7 +44,7 @@ const MobileNav = ({ scrollToRef }: NavbarProps) => {
   const openBurgerTSX = (
     <div className="fixed left-0 top-0 z-10 w-full bg-dark opacity-95">
       <div
-        className="flex h-screen flex-col justify-between px-4 py-4 opacity-0"
+        className="flex min-h-[100dvh] flex-col justify-between px-4 py-4 opacity-0"
         ref={burgerRef}
       >
         <div className="flex flex-col items-end justify-end ">
