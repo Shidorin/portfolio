@@ -18,7 +18,6 @@ export default function Navbar({ scrollToRef }: NavbarProps) {
       const animateText = anime.timeline({});
       animateText.add({ delay: 500 });
       Array.from(logoRef.current.children).forEach((char, i) => {
-        console.log(char);
         animateText.add({
           targets: char,
           opacity: [0, 1],
@@ -28,7 +27,7 @@ export default function Navbar({ scrollToRef }: NavbarProps) {
         });
       });
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <nav className="fixed z-50 w-full bg-white shadow">

@@ -58,7 +58,7 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
                   className="max-w-16 max-h-16 bg-contain"
                   alt={skill.name}
                 />
-                <p>{skill.name}</p>
+                <p className="mt-2">{skill.name}</p>
               </div>
             ))}
           </div>

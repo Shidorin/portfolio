@@ -90,20 +90,20 @@ const ImageSlider = ({ title, images }: IImageSlider) => {
             </div>
           ))}
         </div>
-        <div className="absolute inset-0 flex items-center justify-between">
+        <div className="absolute inset-0 m-2 flex items-center justify-between">
           <button
             onClick={nextImage}
-            className="rounded-full text-primaryText"
+            className="rounded-full bg-white text-primaryText"
             aria-label="left"
           >
-            <MdKeyboardArrowLeft className="h-24 w-8" />
+            <MdKeyboardArrowLeft className="h-8 w-8" />
           </button>
           <button
             onClick={prevImage}
-            className="rounded-full text-primaryText"
+            className="h-fit rounded-full bg-white text-primaryText"
             aria-label="right"
           >
-            <MdKeyboardArrowRight className="h-24 w-8" />
+            <MdKeyboardArrowRight className="h-8 w-8" />
           </button>
         </div>
       </div>
@@ -114,7 +114,7 @@ const ImageSlider = ({ title, images }: IImageSlider) => {
           alt={title}
         ></img>
         <img
-          className="absolute bottom-8 right-8 object-contain filter md:h-64 lg:h-80 xl:h-96"
+          className="absolute bottom-8 right-8 border-2 border-white object-contain filter md:h-64 lg:h-80 xl:h-96"
           src={`/images/${images[1]}`}
           alt={"mobile view of" + title}
         ></img>
