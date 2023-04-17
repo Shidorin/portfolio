@@ -1,5 +1,9 @@
 import anime from "animejs";
-import { forwardRef, useEffect, useRef } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { languagesData } from "../data/data";
+import { ILanguage } from "../types";
 
 interface IHomeProps {
   scrollToRef: (path: string) => void;
@@ -9,6 +13,15 @@ const HomePage = forwardRef<HTMLDivElement, IHomeProps>(
   ({ scrollToRef }, ref) => {
     const elementRefs = useRef<HTMLHeadingElement[]>([]);
     const arrowRef = useRef(null);
+    const language = useSelector((state: RootState) => state.language);
+    const [languageData, setLanguageData] = useState<ILanguage>();
+
+    useEffect(() => {
+      const data: ILanguage | undefined = languagesData.languages.find(
+        (lang: ILanguage) => lang.language === language.language
+      );
+      setLanguageData(data);
+    }, [language]);
 
     /* animate arrow */
     useEffect(() => {
@@ -59,7 +72,7 @@ const HomePage = forwardRef<HTMLDivElement, IHomeProps>(
           },
           "1400"
         );
-    }, []);
+    }, [languageData]);
 
     return (
       <section className="relative mx-auto min-h-[100dvh] w-auto max-w-7xl px-4">
@@ -69,16 +82,15 @@ const HomePage = forwardRef<HTMLDivElement, IHomeProps>(
         >
           <h1
             ref={(el) => (elementRefs.current[0] = el as HTMLDivElement)}
-            className="my-12 text-4xl font-bold md:text-5xl"
+            className="my-12 text-4xl font-bold opacity-0 md:text-5xl"
           >
-            Hello, I'm Wojtek
+            {languageData?.home.title}
           </h1>
           <h1
             ref={(el) => (elementRefs.current[1] = el as HTMLDivElement)}
-            className="my-20 text-3xl font-bold  text-primaryText md:text-5xl lg:my-24"
+            className="my-20 text-3xl font-bold  text-primaryText opacity-0 md:text-5xl lg:my-24"
           >
-            I'm Frontend Software Engineer, something something, and something
-            something
+            {languageData?.home.description}
           </h1>
         </div>
         <div

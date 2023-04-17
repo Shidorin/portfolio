@@ -54,3 +54,15 @@ export interface Project {
 export interface IProjectData {
   projects: Project[];
 }
+
+export interface ILanguage {
+  language: string;
+  home: {
+    title: string;
+    description: string;
+  };
+}
+
+export interface ILanguages {
+  language: ILanguage[];
+}

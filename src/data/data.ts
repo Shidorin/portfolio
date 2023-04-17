@@ -86,3 +86,25 @@ export const projectsData = {
     },
   ],
 };
+
+export const languagesData = {
+  languages: [
+    {
+      language: "en",
+      home: {
+        title: "Hello, I'm Wojtek",
+        description:
+          "I'm Frontend Software Engineer, something something, and something something",
+      },
+    },
+    {
+      language: "pl",
+      nav: {},
+      home: {
+        title: "Cześć, jestem Wojtek",
+        description:
+          "Jestem Frontend Software Engineer, tekst tekst tekst tekst",
+      },
+    },
+  ],
+};
