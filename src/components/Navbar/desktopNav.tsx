@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { links } from "./navLinks";
 import anime from "animejs";
+import LanguageSelector from "../Language/languageSelector";
 
 interface NavbarProps {
   scrollToRef: (path: string) => void;
@@ -33,7 +34,7 @@ const DesktopNav = ({ scrollToRef }: NavbarProps) => {
   }, [desktopNavRef]);
 
   return (
-    <div className="hidden opacity-0 md:block" ref={desktopNavRef}>
+    <div className="hidden opacity-0 md:flex" ref={desktopNavRef}>
       {links.map((link) => (
         <div
           key={link.path}
@@ -49,6 +50,8 @@ const DesktopNav = ({ scrollToRef }: NavbarProps) => {
           </button>
         </div>
       ))}
+
+      <LanguageSelector />
     </div>
   );
 };
