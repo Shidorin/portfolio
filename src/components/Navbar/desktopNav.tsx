@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { links } from "./navLinks";
 import anime from "animejs";
 import LanguageSelector from "../Language/languageSelector";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 interface NavbarProps {
   scrollToRef: (path: string) => void;
@@ -9,6 +11,7 @@ interface NavbarProps {
 
 const DesktopNav = ({ scrollToRef }: NavbarProps) => {
   const desktopNavRef = useRef<HTMLDivElement>(null);
+  const language = useSelector((state: RootState) => state.language);
 
   useEffect(() => {
     const myElement = desktopNavRef.current;
@@ -46,7 +49,7 @@ const DesktopNav = ({ scrollToRef }: NavbarProps) => {
             className="button-primary"
             aria-label={link.name}
           >
-            {link.name}
+            {language.language === "en" ? link.name : link.namePL}
           </button>
         </div>
       ))}

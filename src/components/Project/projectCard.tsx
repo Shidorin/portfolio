@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { HiOutlineLink } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import ImageSlider from "./imageSlider";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,6 +14,7 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const projectRef = useRef<HTMLDivElement>(null);
+  const language = useSelector((state: RootState) => state.language);
 
   /* animate sliding in */
   useEffect(() => {
@@ -60,7 +63,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               to={project.demoLink}
               target="_blank"
             >
-              {"Visit the site"}
+              {language.language === "en" ? "Visit the site" : "Odwiedź stronę"}
               <HiOutlineLink />
             </Link>
           )}
@@ -70,7 +73,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               to={project.sourceCodeLink}
               target="_blank"
             >
-              {"See the code"}
+              {language.language === "en" ? "See the code" : "Zobacz kod"}
               <FaGithub />
             </Link>
           )}
@@ -86,7 +89,11 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         ))}
       </div>
-      <div className="mt-2">{project.description}</div>
+      <div className="mt-2">
+        {language.language === "en"
+          ? project.description
+          : project.descriptionPL}
+      </div>
     </div>
   );
 };

@@ -13,7 +13,7 @@ export interface SkillsData {
 }
 
 export interface ContactFormData {
-  name: string;
+  title: string;
   email: string;
   message: string;
 }
@@ -44,6 +44,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  descriptionPL: string;
   image: string;
   imageMobile: string;
   technologies: Skill[];

@@ -46,7 +46,7 @@ const LanguageSelector = () => {
         <img
           width="32"
           className="pr-1"
-          alt="Flag of the United Kingdom (1-2)"
+          alt="english"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/64px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
         />
         {"EN"}
@@ -60,7 +60,7 @@ const LanguageSelector = () => {
           viewBox="0 0 640 480"
           className="pr-1"
         >
-          <g fill-rule="evenodd">
+          <g fillRule="evenodd">
             <path fill="#dc143c" d="M10 10h620v460H10z"></path>
             <path fill="#fff" d="M10 10h620v230H10z"></path>
           </g>
@@ -81,7 +81,11 @@ const LanguageSelector = () => {
         onClick={handleDropdownClick}
       >
         <span>{language.language}</span>
-        {<MdOutlineKeyboardArrowDown className="ml-1" />}
+        {
+          <MdOutlineKeyboardArrowDown
+            className={`ml-1 transition ${showDropdown && "rotate-180"}`}
+          />
+        }
       </div>
       {showDropdown && dropdownTSX}
     </div>

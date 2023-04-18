@@ -6,7 +6,7 @@ import anime from "animejs";
 
 const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
   const [formData, setFormData] = useState<ContactFormData>({
-    name: "",
+    title: "",
     email: "",
     message: "",
   });
@@ -103,14 +103,17 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         className="mx-auto max-w-3xl rounded border-2 border-dark p-6 font-mono text-xl opacity-0"
         onSubmit={handleSubmit}
         ref={formRef}
+        name="contact"
+        method="POST"
+        data-netlify="true"
       >
         <div className="mb-6">
           <Input
-            id="name"
-            name="name"
+            id="title"
+            name="title"
             type="text"
-            placeholder="Name"
-            value={formData.name}
+            placeholder="Title"
+            value={formData.title}
             onChange={handleChange}
             // required={true}
           />

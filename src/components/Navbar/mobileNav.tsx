@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { links } from "./navLinks";
 import anime from "animejs";
-
+import LanguageSelector from "../Language/languageSelector";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import { MdOutlineClose } from "react-icons/md";
 interface NavbarProps {
   scrollToRef: (path: string) => void;
 }
@@ -9,6 +12,7 @@ interface NavbarProps {
 const MobileNav = ({ scrollToRef }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const burgerRef = useRef<HTMLDivElement>(null);
+  const language = useSelector((state: RootState) => state.language);
 
   useEffect(() => {
     const element = burgerRef.current;
@@ -53,7 +57,7 @@ const MobileNav = ({ scrollToRef }: NavbarProps) => {
             className=" p-2 text-white"
             aria-label="close"
           >
-            CLOSE
+            <MdOutlineClose className="h-6 w-6" />
           </button>
         </div>
         <div className="flex flex-grow flex-col items-end justify-end pb-8 ">
@@ -64,7 +68,7 @@ const MobileNav = ({ scrollToRef }: NavbarProps) => {
               onClick={() => handleBurger(link.path)}
               aria-label={link.name}
             >
-              {link.name}
+              {language.language === "en" ? link.name : link.namePL}
             </button>
           ))}
         </div>
@@ -73,7 +77,8 @@ const MobileNav = ({ scrollToRef }: NavbarProps) => {
   );
 
   return (
-    <div className="md:hidden">
+    <div className="flex md:hidden">
+      <LanguageSelector />
       <button
         className="flex items-center rounded border border-gray-600 px-3 py-2 text-dark hover:border-primaryText hover:text-primaryText"
         onClick={handleToggle}

@@ -40,6 +40,7 @@ export const projectsData = {
       id: "1",
       title: "eBookshelf",
       description: "dummy data",
+      descriptionPL: "pl dummy data",
       image: "ebookshelf.png",
       imageMobile: "ebookshelf-mobile.png",
       technologies: [
@@ -57,6 +58,7 @@ export const projectsData = {
       id: "2",
       title: "Hotel Website",
       description: "dummy data",
+      descriptionPL: "pl dummy data",
       image: "hotel.png",
       imageMobile: "hotel-mobile.png",
       technologies: [
@@ -73,6 +75,8 @@ export const projectsData = {
       title: "Portfolio",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat tortor nunc, vel bibendum sem vestibulum et. Vivamus vel luctus purus. Mauris fermentum libero at felis tempor lobortis. Nunc ullamcorper felis ut est laoreet fringilla. Sed commodo bibendum sapien, ac imperdiet nisi commodo a.",
+      descriptionPL:
+        "pl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat tortor nunc, vel bibendum sem vestibulum et. Vivamus vel luctus purus. Mauris fermentum libero at felis tempor lobortis. Nunc ullamcorper felis ut est laoreet fringilla. Sed commodo bibendum sapien, ac imperdiet nisi commodo a.",
       image: "portfolio.png",
       imageMobile: "portfolio-mobile.png",
       technologies: [
