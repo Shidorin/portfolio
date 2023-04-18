@@ -62,31 +62,45 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         easing: "easeInOutQuad",
       }).finished;
     }
-    setTimeout(() => {
-      setIsSuccess(true);
-      setIsFailure(false);
-      setTimeout(() => {
-        setIsSubmitting(false);
-      }, 4000);
-    }, 2000);
+    // setTimeout(() => {
+    //   setIsSuccess(true);
+    //   setIsFailure(false);
+    //   setTimeout(() => {
+    //     setIsSubmitting(false);
+    //   }, 4000);
+    // }, 2000);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setIsSuccess(true);
+        setIsFailure(false);
+        setFormData({
+          title: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setIsSuccess(false);
+        setIsFailure(true);
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      setIsFailure(true);
+    }
 
     // try {
-    //   const response = await fetch("/.netlify/functions/contact", {
+    //   const response = await fetch("/", {
     //     method: "POST",
-    //     body: JSON.stringify(formData),
-    //   });
-    //   if (response.ok) {
-    //     setIsSuccess(true);
-    //     setIsFailure(false);
-    //     setFormData({
-    //       name: "",
-    //       email: "",
-    //       message: "",
-    //     });
-    //   } else {
-    //     setIsSuccess(false);
-    //     setIsFailure(true);
-    //   }
+    //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //     body: new URLSearchParams(formData).toString(),
+    //   })
+    //     .then(() => console.log("Form successfully submitted"))
+    //     .catch((error) => alert(error));
     // } catch (error) {
     //   setIsSuccess(false);
     //   setIsFailure(true);
