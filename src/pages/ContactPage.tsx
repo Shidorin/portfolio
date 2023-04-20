@@ -71,11 +71,17 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
     // }, 2000);
 
     try {
-      console.log(JSON.stringify(formData));
+      const params = new URLSearchParams();
+      params.append("form-name", "contact");
+      for (const [key, value] of Object.entries(formData)) {
+        params.append(key, value);
+      }
+
+      console.log(params.toString());
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: JSON.stringify(formData),
+        body: params.toString(),
       });
       if (response.ok) {
         setIsSuccess(true);
@@ -123,6 +129,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         name="contact"
         method="POST"
       >
+        <input type="hidden" name="form-name" value="contact" />
         <Input
           id="title"
           name="title"
