@@ -106,9 +106,11 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
     //   setIsFailure(true);
     // }
 
-    setIsSubmitting(false);
-    setIsSuccess(false);
-    setIsFailure(false);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(false);
+      setIsFailure(false);
+    }, 2000);
   };
 
   return (

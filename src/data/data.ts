@@ -40,7 +40,7 @@ export const projectsData = {
       id: "1",
       title: "eBookshelf",
       description: "dummy data",
-      descriptionPL: "pl dummy data",
+      descriptionPL: "",
       image: "ebookshelf.png",
       imageMobile: "ebookshelf-mobile.png",
       technologies: [
@@ -58,7 +58,11 @@ export const projectsData = {
       id: "2",
       title: "Hotel Website",
       description: "dummy data",
-      descriptionPL: "pl dummy data",
+      descriptionPL:
+        "Strona sieci hoteli została stworzona jako narzędzie do nauki TypeScript oraz udoskonalenie podstaw CSS. " +
+        "Została przygotowana również pod możliwość korzystania przez urządzenia mobilne. " +
+        "Strona zawiera filtr hoteli, który jest połączony z paginacją oraz z url. "+
+        "Projekt nie posiada backendu, ale cała strona jest dynamiczna i przygotowana pod możliwość zastąpienia danych pozornych na realne.",
       image: "hotel.png",
       imageMobile: "hotel-mobile.png",
       technologies: [
@@ -74,14 +78,19 @@ export const projectsData = {
       id: "3",
       title: "Portfolio",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat tortor nunc, vel bibendum sem vestibulum et. Vivamus vel luctus purus. Mauris fermentum libero at felis tempor lobortis. Nunc ullamcorper felis ut est laoreet fringilla. Sed commodo bibendum sapien, ac imperdiet nisi commodo a.",
+        "While creating the portfolio, I had a chance to work with CI/CD infrastructure using Netlify." +
+        "To prepare the user interface, I used Tailwind and the Anime.js library, which helped me create animations. " +
+        "Tailwind has proven to be an ideal tool for quickly creating flexible UIs with a 'mobile first' approach.",
       descriptionPL:
-        "pl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat tortor nunc, vel bibendum sem vestibulum et. Vivamus vel luctus purus. Mauris fermentum libero at felis tempor lobortis. Nunc ullamcorper felis ut est laoreet fringilla. Sed commodo bibendum sapien, ac imperdiet nisi commodo a.",
+        "Tworząc portfolio miałem okazję pracować z CI/CD infrastrukturą korzystając z Netlify. " +
+        "Do przygotowania interfejsu wykorzystałem Tailwind oraz bibliotekę Anime.js dzięki, której stworzyłem animacje. " +
+        "Tailwind okazał się idealnym narzędziem do szybkiego tworzenia elastycznego UI z podejściem 'mobile first'.",
       image: "portfolio.png",
       imageMobile: "portfolio-mobile.png",
       technologies: [
         { name: "TypeScript", img: "typescript.png" },
         { name: "React", img: "react.png" },
+        { name: "Redux", img: "redux.png" },
         { name: "Tailwind", img: "tailwind.png" },
         { name: "Anime.js", img: "animejs.png" },
       ],

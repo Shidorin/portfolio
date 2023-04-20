@@ -17,7 +17,7 @@ const ProjectsPage = forwardRef<HTMLDivElement>((props, ref) => {
   }, []);
 
   return (
-    <section ref={ref} className="relative mx-auto w-auto max-w-7xl px-4 py-20">
+    <section ref={ref} className="relative mx-auto w-auto max-w-7xl px-4 pt-10">
       {projectData?.projects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}

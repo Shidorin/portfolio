@@ -40,7 +40,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   }, [projectRef]);
 
   return (
-    <div className="mb-20 flex flex-col opacity-0" ref={projectRef}>
+    <div className="mb-10 flex flex-col opacity-0" ref={projectRef}>
       <ImageSlider
         title={project.title}
         images={[project.image, project.imageMobile]}
@@ -89,11 +89,11 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         ))}
       </div>
-      <div className="mt-2">
+      <p className="mt-2 text-justify">
         {language.language === "en"
           ? project.description
           : project.descriptionPL}
-      </div>
+      </p>
     </div>
   );
 };
