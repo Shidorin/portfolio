@@ -118,11 +118,10 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
     <section ref={ref} className="relative mx-auto w-auto max-w-7xl px-4 py-20">
       <form
         className="mx-auto max-w-3xl rounded border-2 border-dark p-6 font-mono text-xl opacity-0"
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
         ref={formRef}
         name="contact"
         method="POST"
-        data-netlify="true"
       >
         <Input
           id="title"
@@ -131,7 +130,6 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
           placeholder="Title"
           value={formData.title}
           onChange={handleChange}
-          // required={true}
         />
 
         <Input
@@ -141,7 +139,6 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          // required={true}
         />
         <textarea
           className="mb-6 w-full appearance-none rounded border border-dark px-3 py-2 leading-tight text-dark shadow focus:border-primaryText  focus:outline-none"
@@ -151,7 +148,6 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
           value={formData.message}
           rows={10}
           onChange={handleChange}
-          // required
         />
         <div className="flex justify-center">
           <Button
