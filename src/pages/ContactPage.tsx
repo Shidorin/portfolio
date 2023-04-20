@@ -71,6 +71,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
     // }, 2000);
 
     try {
+      console.log(JSON.stringify(formData));
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -117,7 +118,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
     <section ref={ref} className="relative mx-auto w-auto max-w-7xl px-4 py-20">
       <form
         className="mx-auto max-w-3xl rounded border-2 border-dark p-6 font-mono text-xl opacity-0"
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
         ref={formRef}
         name="contact"
         method="POST"
