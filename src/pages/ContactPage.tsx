@@ -123,40 +123,35 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         method="POST"
         data-netlify="true"
       >
-        <div className="mb-6">
-          <Input
-            id="title"
-            name="title"
-            type="text"
-            placeholder="Title"
-            value={formData.title}
-            onChange={handleChange}
-            // required={true}
-          />
-        </div>
-        <div className="mb-6">
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            // required={true}
-          />
-        </div>
-        <div className="mb-6">
-          <textarea
-            className="w-full appearance-none rounded border border-dark px-3 py-2 leading-tight text-dark shadow focus:border-primaryText focus:outline-none"
-            id="message"
-            name="message"
-            placeholder="Message"
-            value={formData.message}
-            rows={10}
-            onChange={handleChange}
-            // required
-          />
-        </div>
+        <Input
+          id="title"
+          name="title"
+          type="text"
+          placeholder="Title"
+          value={formData.title}
+          onChange={handleChange}
+          // required={true}
+        />
+
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          // required={true}
+        />
+        <textarea
+          className="mb-6 w-full appearance-none rounded border border-dark px-3 py-2 leading-tight text-dark shadow focus:border-primaryText  focus:outline-none"
+          id="message"
+          name="message"
+          placeholder="Message"
+          value={formData.message}
+          rows={10}
+          onChange={handleChange}
+          // required
+        />
         <div className="flex justify-center">
           <Button
             submitting={isSubmitting}
