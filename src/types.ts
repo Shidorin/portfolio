@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 export interface Skill {
   name: string;
   img: string;
@@ -13,7 +15,7 @@ export interface SkillsData {
 }
 
 export interface ContactFormData {
-  title: string;
+  name: string;
   email: string;
   message: string;
 }
@@ -66,4 +68,23 @@ export interface ILanguage {
 
 export interface ILanguages {
   language: ILanguage[];
+}
+
+export interface ContactLink {
+  description: string;
+  url: string;
+}
+
+export interface ContactInfo {
+  title: string;
+  icon: IconType;
+  links: ContactLink[];
+}
+
+export interface ContactForm {
+  title: string;
+  namePlaceholder: string;
+  msgPlaceholder: string;
+  contactButton: string;
+  contact: ContactInfo[];
 }

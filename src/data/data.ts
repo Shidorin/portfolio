@@ -1,3 +1,9 @@
+import {
+  MdOutlineEmail,
+  MdOutlineExplore,
+  MdOutlineInsertDriveFile,
+} from "react-icons/md";
+
 export const skillData = {
   skills: [
     {
@@ -61,7 +67,7 @@ export const projectsData = {
       descriptionPL:
         "Strona sieci hoteli została stworzona jako narzędzie do nauki TypeScript oraz udoskonalenie podstaw CSS. " +
         "Została przygotowana również pod możliwość korzystania przez urządzenia mobilne. " +
-        "Strona zawiera filtr hoteli, który jest połączony z paginacją oraz z url. "+
+        "Strona zawiera filtr hoteli, który jest połączony z paginacją oraz z url. " +
         "Projekt nie posiada backendu, ale cała strona jest dynamiczna i przygotowana pod możliwość zastąpienia danych pozornych na realne.",
       image: "hotel.png",
       imageMobile: "hotel-mobile.png",
@@ -78,7 +84,7 @@ export const projectsData = {
       id: "3",
       title: "Portfolio",
       description:
-        "While creating the portfolio, I had a chance to work with CI/CD infrastructure using Netlify." +
+        "While creating the portfolio, I had a chance to work with CI/CD infrastructure using Netlify. " +
         "To prepare the user interface, I used Tailwind and the Anime.js library, which helped me create animations. " +
         "Tailwind has proven to be an ideal tool for quickly creating flexible UIs with a 'mobile first' approach.",
       descriptionPL:
@@ -118,6 +124,92 @@ export const languagesData = {
         description:
           "Jestem Frontend Software Engineer, tekst tekst tekst tekst",
       },
+    },
+  ],
+};
+
+export const contactInfo = {
+  title: "Contact me",
+  namePlaceholder: "Name",
+  msgPlaceholder: "Message",
+  contactButton: "Contact me",
+  contact: [
+    {
+      title: "Portfolio",
+      icon: MdOutlineInsertDriveFile,
+      links: [
+        {
+          description: "View english portfolio",
+          url: "Pawlicki-Gil_CV_eng.pdf",
+        },
+        {
+          description: "View polish portfolio",
+          url: "Pawlicki-Gil_CV_eng.pdf",
+        },
+      ],
+    },
+    {
+      title: "Email",
+      icon: MdOutlineEmail,
+      links: [
+        {
+          description: "wojciech.pawlicki-gil@gmail.com",
+          url: "",
+        },
+      ],
+    },
+    {
+      title: "Sites******",
+      icon: MdOutlineExplore,
+      links: [
+        {
+          description: "Github",
+          url: "https://github.com/Shidorin",
+        },
+      ],
+    },
+  ],
+};
+
+export const contactInfoPL = {
+  title: "Skontaktuj się",
+  namePlaceholder: "Imię",
+  msgPlaceholder: "Wiadomość",
+  contactButton: "Wyślij",
+  contact: [
+    {
+      title: "Portfolio",
+      icon: MdOutlineInsertDriveFile,
+      links: [
+        {
+          description: "Zobacz portfolio po angielsku",
+          url: "Pawlicki-Gil_CV_eng.pdf",
+        },
+        {
+          description: "Zobacz portfolio po polsku",
+          url: "Pawlicki-Gil_CV_eng.pdf",
+        },
+      ],
+    },
+    {
+      title: "Email",
+      icon: MdOutlineEmail,
+      links: [
+        {
+          description: "wojciech.pawlicki-gil@gmail.com",
+          url: "",
+        },
+      ],
+    },
+    {
+      title: "Strony******",
+      icon: MdOutlineExplore,
+      links: [
+        {
+          description: "Github",
+          url: "https://github.com/Shidorin",
+        },
+      ],
     },
   ],
 };

@@ -1,18 +1,25 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { ContactFormData } from "../types";
+import { ContactForm, ContactFormData, ContactInfo } from "../types";
 import { Button } from "../components/common/button";
 import { Input } from "../components/common/input";
 import anime from "animejs";
+import ContactInfoCard from "../components/ContactInfoCard/contactInfoCard";
+import { contactInfo, contactInfoPL } from "../data/data";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
   const [formData, setFormData] = useState<ContactFormData>({
-    title: "",
+    name: "",
     email: "",
     message: "",
   });
+  const [contactInfoData, setContactInfoData] = useState<ContactForm>();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [isFailure, setIsFailure] = useState<boolean>(false);
+
+  const language = useSelector((state: RootState) => state.language);
 
   const formRef = useRef<HTMLFormElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -40,6 +47,11 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
     }
   }, [formRef]);
 
+  useEffect(() => {
+    if (language.language === "pl") setContactInfoData(contactInfoPL);
+    else setContactInfoData(contactInfo);
+  }, [language]);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -62,13 +74,6 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         easing: "easeInOutQuad",
       }).finished;
     }
-    // setTimeout(() => {
-    //   setIsSuccess(true);
-    //   setIsFailure(false);
-    //   setTimeout(() => {
-    //     setIsSubmitting(false);
-    //   }, 4000);
-    // }, 2000);
 
     try {
       const params = new URLSearchParams();
@@ -77,7 +82,6 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         params.append(key, value);
       }
 
-      console.log(params.toString());
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -87,7 +91,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         setIsSuccess(true);
         setIsFailure(false);
         setFormData({
-          title: "",
+          name: "",
           email: "",
           message: "",
         });
@@ -100,19 +104,6 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
       setIsFailure(true);
     }
 
-    // try {
-    //   const response = await fetch("/", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //     body: new URLSearchParams(formData).toString(),
-    //   })
-    //     .then(() => console.log("Form successfully submitted"))
-    //     .catch((error) => alert(error));
-    // } catch (error) {
-    //   setIsSuccess(false);
-    //   setIsFailure(true);
-    // }
-
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(false);
@@ -120,53 +111,77 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
     }, 2000);
   };
 
-  return (
-    <section ref={ref} className="relative mx-auto w-auto max-w-7xl px-4 py-20">
-      <form
-        className="mx-auto max-w-3xl rounded border-2 border-dark p-6 font-mono text-xl opacity-0"
-        onSubmit={handleSubmit}
-        ref={formRef}
-        name="contact"
-        method="POST"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <Input
-          id="title"
-          name="title"
-          type="text"
-          placeholder="Title"
-          value={formData.title}
-          onChange={handleChange}
-        />
+  const formTSX = (
+    <form
+      className="max-w-3xl grow rounded border-2 border-dark p-6 font-mono text-xl opacity-0 lg:ml-auto "
+      onSubmit={handleSubmit}
+      ref={formRef}
+      name="contact"
+      method="POST"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <Input
+        id="name"
+        name="name"
+        type="text"
+        placeholder={contactInfoData?.namePlaceholder}
+        value={formData.name}
+        onChange={handleChange}
+      />
 
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
+      <Input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <textarea
+        className="mb-6 w-full appearance-none rounded border border-dark px-3 py-2 leading-tight text-dark shadow focus:border-primaryText  focus:outline-none"
+        id="message"
+        name="message"
+        placeholder={contactInfoData?.msgPlaceholder}
+        value={formData.message}
+        rows={10}
+        onChange={handleChange}
+      />
+      <div className="flex justify-center">
+        <Button
+          submitting={isSubmitting}
+          ref={buttonRef}
+          isSuccess={isSuccess}
+          isFailure={isFailure}
+        >
+          {contactInfoData?.contactButton}
+        </Button>
+      </div>
+    </form>
+  );
+
+  const contactInfoTSX = (
+    <div className="mt-4 flex w-full max-w-xl grow flex-col gap-y-8 text-white ">
+      <h2 className="mx-auto mb-4 text-4xl sm:text-6xl text-primaryText">
+        {contactInfoData?.title}
+      </h2>
+      {contactInfoData?.contact.map((info) => (
+        <ContactInfoCard
+          key={info.title}
+          title={info.title}
+          icon={<info.icon className="h-10 w-10" />}
+          links={info.links}
         />
-        <textarea
-          className="mb-6 w-full appearance-none rounded border border-dark px-3 py-2 leading-tight text-dark shadow focus:border-primaryText  focus:outline-none"
-          id="message"
-          name="message"
-          placeholder="Message"
-          value={formData.message}
-          rows={10}
-          onChange={handleChange}
-        />
-        <div className="flex justify-center">
-          <Button
-            submitting={isSubmitting}
-            ref={buttonRef}
-            isSuccess={isSuccess}
-            isFailure={isFailure}
-          >
-            {isSubmitting ? "Sending" : "Contact me"}
-          </Button>
-        </div>
-      </form>
+      ))}
+    </div>
+  );
+
+  return (
+    <section
+      ref={ref}
+      className="relative mx-auto flex w-auto max-w-7xl flex-col items-center justify-center gap-x-12 gap-y-8 px-4 py-10 lg:flex-row"
+    >
+      {contactInfoTSX}
+      {formTSX}
     </section>
   );
 });
