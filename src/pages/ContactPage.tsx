@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { ContactForm, ContactFormData, ContactInfo } from "../types";
+import { ContactForm, ContactFormData } from "../types";
 import { Button } from "../components/common/button";
 import { Input } from "../components/common/input";
 import anime from "animejs";
