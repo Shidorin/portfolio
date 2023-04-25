@@ -47,7 +47,7 @@ const ContactInfoCard = ({ title, icon, links }: ContactInfoCardProps) => {
         {links.map((link: ContactLink) =>
           link.url ? (
             <Link to={`${link.url}`} target="_blank" key={link.description}>
-              <button className="whitespace-nowrap text-base hover:underline md:text-lg">
+              <button className="whitespace-nowrap text-base underline md:text-lg">
                 {link.description}
               </button>
             </Link>

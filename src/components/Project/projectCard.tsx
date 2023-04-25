@@ -40,7 +40,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   }, [projectRef]);
 
   return (
-    <div className="mb-40 flex flex-col opacity-0" ref={projectRef}>
+    <div className="mb-28 flex flex-col opacity-0" ref={projectRef}>
       <ImageSlider
         title={project.title}
         images={[project.image, project.imageMobile]}
