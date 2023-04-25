@@ -47,8 +47,8 @@ export const projectsData = {
       title: "eBookshelf",
       description: "dummy data",
       descriptionPL: "",
-      image: "ebookshelf.png",
-      imageMobile: "ebookshelf-mobile.png",
+      image: "ebookshelf.webp",
+      imageMobile: "ebookshelf-mobile.webp",
       technologies: [
         { name: "JavaScript", img: "javascript.png" },
         { name: "React", img: "react.png" },
@@ -69,8 +69,8 @@ export const projectsData = {
         "Została przygotowana również pod możliwość korzystania przez urządzenia mobilne. " +
         "Strona zawiera filtr hoteli, który jest połączony z paginacją oraz z url. " +
         "Projekt nie posiada backendu, ale cała strona jest dynamiczna i przygotowana pod możliwość zastąpienia danych pozornych na realne.",
-      image: "hotel.png",
-      imageMobile: "hotel-mobile.png",
+      image: "hotel.webp",
+      imageMobile: "hotel-mobile.webp",
       technologies: [
         { name: "TypeScript", img: "typescript.png" },
         { name: "React", img: "react.png" },
@@ -91,8 +91,8 @@ export const projectsData = {
         "Tworząc portfolio miałem okazję pracować z CI/CD infrastrukturą korzystając z Netlify. " +
         "Do przygotowania interfejsu wykorzystałem Tailwind oraz bibliotekę Anime.js dzięki, której stworzyłem animacje. " +
         "Tailwind okazał się idealnym narzędziem do szybkiego tworzenia elastycznego UI z podejściem 'mobile first'.",
-      image: "portfolio.png",
-      imageMobile: "portfolio-mobile.png",
+      image: "portfolio.webp",
+      imageMobile: "portfolio-mobile.webp",
       technologies: [
         { name: "TypeScript", img: "typescript.png" },
         { name: "React", img: "react.png" },
