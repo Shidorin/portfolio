@@ -135,15 +135,15 @@ export const contactInfo = {
   contactButton: "Contact me",
   contact: [
     {
-      title: "Portfolio",
+      title: "View portfolio",
       icon: MdOutlineInsertDriveFile,
       links: [
         {
-          description: "View english portfolio",
+          description: "English version",
           url: "Pawlicki-Gil_CV_eng.pdf",
         },
         {
-          description: "View polish portfolio",
+          description: "Polish version",
           url: "Pawlicki-Gil_CV_eng.pdf",
         },
       ],
@@ -178,7 +178,7 @@ export const contactInfoPL = {
   contactButton: "Wyślij",
   contact: [
     {
-      title: "Portfolio",
+      title: "Zobacz portfolio",
       icon: MdOutlineInsertDriveFile,
       links: [
         {

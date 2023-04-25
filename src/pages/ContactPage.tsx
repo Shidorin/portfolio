@@ -143,7 +143,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         name="message"
         placeholder={contactInfoData?.msgPlaceholder}
         value={formData.message}
-        rows={10}
+        rows={9}
         onChange={handleChange}
       />
       <div className="flex justify-center">
@@ -161,7 +161,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const contactInfoTSX = (
     <div className="mt-4 flex w-full max-w-xl grow flex-col gap-y-8 text-white ">
-      <h2 className="mx-auto mb-4 text-4xl sm:text-6xl text-primaryText">
+      <h2 className=" mb-4 text-4xl text-primaryText sm:text-6xl">
         {contactInfoData?.title}
       </h2>
       {contactInfoData?.contact.map((info) => (

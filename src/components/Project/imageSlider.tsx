@@ -86,6 +86,7 @@ const ImageSlider = ({ title, images }: IImageSlider) => {
                 src={`/images/${image}`}
                 alt={`${title}-${index}`}
                 className="h-80 w-full object-contain object-center brightness-90 filter"
+                loading="lazy"
               />
             </div>
           ))}
@@ -112,11 +113,13 @@ const ImageSlider = ({ title, images }: IImageSlider) => {
           className="h-auto w-full object-cover object-center brightness-75 filter"
           src={`/images/${images[0]}`}
           alt={title}
+          loading="lazy"
         ></img>
         <img
           className="absolute bottom-8 right-8 border-2 border-white object-contain filter md:h-64 lg:h-80 xl:h-96"
           src={`/images/${images[1]}`}
           alt={"mobile view of" + title}
+          loading="lazy"
         ></img>
       </div>
     </>
