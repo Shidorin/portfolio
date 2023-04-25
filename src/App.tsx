@@ -6,6 +6,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar/Navbar";
 import { useRef } from "react";
+import Footer from "./pages/Footer";
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -46,6 +47,7 @@ function App() {
         <ProjectsPage ref={projectsRef} />
         <ContactPage ref={contactRef} />
       </main>
+      <Footer scrollToRef={handleScroll} />
     </div>
   );
 }

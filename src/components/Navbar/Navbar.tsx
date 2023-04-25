@@ -30,7 +30,7 @@ export default function Navbar({ scrollToRef }: NavbarProps) {
   }, [isMobile]);
 
   return (
-    <nav className="fixed z-50 w-full bg-white shadow">
+    <nav className="notranslate fixed z-50 w-full bg-white shadow">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-14 items-center justify-between lg:h-20">
           <button

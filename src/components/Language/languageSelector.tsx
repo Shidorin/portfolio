@@ -37,35 +37,50 @@ const LanguageSelector = () => {
     setShowDropdown(!showDropdown);
   };
 
+  const enFlag = (
+    <img
+      width="32"
+      className="rounded"
+      alt="english"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/64px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
+    />
+  );
+
+  const plFlag = (
+    // <svg
+    //   xmlns="http://www.w3.org/2000/svg"
+    //   viewBox="0 0 640 480"
+    //   className="pr-1"
+    // >
+    //   <g fillRule="evenodd">
+    //     <path fill="#dc143c" d="M10 10h620v460H10z"></path>
+    //     <path fill="#fff" d="M10 10h620v230H10z"></path>
+    //   </g>
+    // </svg>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/1200px-Flag_of_Poland.svg.png"
+      alt="Flag of Poland.svg"
+      width="32"
+      className="rounded border border-gray-300"
+    />
+  );
+
   const dropdownTSX = (
     <div className="absolute top-full w-full border bg-stone-100">
       <div
         className="flex cursor-pointer content-between items-center p-2 hover:text-primaryText"
         onClick={() => handleLanguageChange("en")}
       >
-        <img
-          width="32"
-          className="pr-1"
-          alt="english"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/64px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
-        />
-        {"EN"}
+        {enFlag}
+        <p className="pl-1">{"EN"}</p>
       </div>
       <div
         className="flex cursor-pointer content-between items-center p-2 hover:text-primaryText"
         onClick={() => handleLanguageChange("pl")}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 640 480"
-          className="pr-1"
-        >
-          <g fillRule="evenodd">
-            <path fill="#dc143c" d="M10 10h620v460H10z"></path>
-            <path fill="#fff" d="M10 10h620v230H10z"></path>
-          </g>
-        </svg>
-        {"PL"}
+        {plFlag}
+        <p className="pl-1">{"PL"}</p>
       </div>
     </div>
   );
@@ -80,7 +95,7 @@ const LanguageSelector = () => {
         role="listbox"
         onClick={handleDropdownClick}
       >
-        <span>{language.language}</span>
+        <span>{language.language === "en" ? enFlag : plFlag}</span>
         {
           <MdOutlineKeyboardArrowDown
             className={`ml-1 transition ${showDropdown && "rotate-180"}`}

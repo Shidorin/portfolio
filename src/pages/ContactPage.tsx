@@ -63,52 +63,56 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    // animate button
-    if (buttonRef.current) {
-      await anime({
-        targets: buttonRef.current,
-        translateY: ["0", "-10px"],
-        opacity: [1, 0],
-        duration: 3500,
-        easing: "easeInOutQuad",
-      }).finished;
-    }
+    if (formData.email && formData.name && formData.message) {
+      // Send form data
 
-    try {
-      const params = new URLSearchParams();
-      params.append("form-name", "contact");
-      for (const [key, value] of Object.entries(formData)) {
-        params.append(key, value);
+      setIsSubmitting(true);
+      // animate button
+      if (buttonRef.current) {
+        await anime({
+          targets: buttonRef.current,
+          translateY: ["0", "-10px"],
+          opacity: [1, 0],
+          duration: 3500,
+          easing: "easeInOutQuad",
+        }).finished;
       }
 
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
-      });
-      if (response.ok) {
-        setIsSuccess(true);
-        setIsFailure(false);
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
+      try {
+        const params = new URLSearchParams();
+        params.append("form-name", "contact");
+        for (const [key, value] of Object.entries(formData)) {
+          params.append(key, value);
+        }
+
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: params.toString(),
         });
-      } else {
+        if (response.ok) {
+          setIsSuccess(true);
+          setIsFailure(false);
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+        } else {
+          setIsSuccess(false);
+          setIsFailure(true);
+        }
+      } catch (error) {
         setIsSuccess(false);
         setIsFailure(true);
       }
-    } catch (error) {
-      setIsSuccess(false);
-      setIsFailure(true);
-    }
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(false);
-      setIsFailure(false);
-    }, 2000);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(false);
+        setIsFailure(false);
+      }, 2000);
+    }
   };
 
   const formTSX = (
@@ -127,6 +131,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         placeholder={contactInfoData?.namePlaceholder}
         value={formData.name}
         onChange={handleChange}
+        required={true}
       />
 
       <Input
@@ -136,6 +141,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         placeholder="Email"
         value={formData.email}
         onChange={handleChange}
+        required={true}
       />
       <textarea
         className="mb-6 w-full appearance-none rounded border border-dark px-3 py-2 leading-tight text-dark shadow focus:border-primaryText  focus:outline-none"
@@ -145,6 +151,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         value={formData.message}
         rows={9}
         onChange={handleChange}
+        required={true}
       />
       <div className="flex justify-center">
         <Button

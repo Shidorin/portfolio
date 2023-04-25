@@ -159,7 +159,7 @@ export const contactInfo = {
       ],
     },
     {
-      title: "Sites******",
+      title: "Sites",
       icon: MdOutlineExplore,
       links: [
         {
@@ -202,7 +202,7 @@ export const contactInfoPL = {
       ],
     },
     {
-      title: "Strony******",
+      title: "Strony",
       icon: MdOutlineExplore,
       links: [
         {
