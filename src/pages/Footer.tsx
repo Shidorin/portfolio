@@ -37,11 +37,13 @@ const Footer = ({ scrollToRef }: IFooterProps) => {
             ref={iconRef}
             onMouseEnter={handleHover}
             onMouseLeave={handleMouseLeave}
+            role="button"
+            aria-label="Back to top"
           >
             <MdKeyboardArrowUp className="h-12 w-12 text-white" />
           </button>
         </div>
-        <p>{`Made by Wojciech Pawlicki-Gil 2023`}</p>
+        <p className="text-xl font-bold">{`Made by Wojciech Pawlicki-Gil 2023`}</p>
       </div>
     </footer>
   );

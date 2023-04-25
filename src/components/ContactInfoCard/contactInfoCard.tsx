@@ -43,7 +43,7 @@ const ContactInfoCard = ({ title, icon, links }: ContactInfoCardProps) => {
     >
       <div className="rounded-lg border p-2">{icon}</div>
       <div className="flex flex-col">
-        <h5 className="text text-4xl">{title}</h5>
+        <h3 className="text text-4xl">{title}</h3>
         {links.map((link: ContactLink) =>
           link.url ? (
             <Link to={`${link.url}`} target="_blank" key={link.description}>

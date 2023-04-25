@@ -55,7 +55,7 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
               >
                 <img
                   src={`/icons/${skill.img}`}
-                  className="max-w-16 max-h-16 bg-contain"
+                  className="max-h-16 bg-contain"
                   alt={skill.name}
                 />
                 <p className="mt-2">{skill.name}</p>

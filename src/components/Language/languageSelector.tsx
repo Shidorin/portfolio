@@ -39,8 +39,7 @@ const LanguageSelector = () => {
 
   const enFlag = (
     <img
-      width="32"
-      className="rounded"
+      className="h-auto w-8 rounded"
       alt="english"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/64px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
     />
@@ -92,7 +91,11 @@ const LanguageSelector = () => {
     >
       <div
         className="button-primary flex items-center justify-center "
-        role="listbox"
+        role="combobox"
+        aria-haspopup="listbox"
+        aria-expanded={showDropdown}
+        aria-controls="dropdown-options"
+        aria-label="Select language"
         onClick={handleDropdownClick}
       >
         <span>{language.language === "en" ? enFlag : plFlag}</span>
