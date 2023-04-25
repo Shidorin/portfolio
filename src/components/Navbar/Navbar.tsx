@@ -40,7 +40,7 @@ export default function Navbar({ scrollToRef }: NavbarProps) {
             ref={logoRef}
           >
             {logoText.split("").map((char, i) => (
-              <span key={i} className="text-2xl font-bold opacity-0">
+              <span key={i} className="text-2xl font-bold opacity-0 text-dark">
                 {char}
               </span>
             ))}

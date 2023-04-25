@@ -1,8 +1,9 @@
 import anime from "animejs";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ContactLink } from "../../types";
+import { MdOutlineContentCopy } from "react-icons/md";
 
 interface ContactInfoCardProps {
   title: string;
@@ -12,6 +13,13 @@ interface ContactInfoCardProps {
 
 const ContactInfoCard = ({ title, icon, links }: ContactInfoCardProps) => {
   const infoRef = useRef<HTMLDivElement>(null);
+  const [showCopySuccess, setShowCopySuccess] = useState(false);
+
+  const copyToClipboard = (value: string) => {
+    navigator.clipboard.writeText(value);
+    setShowCopySuccess(true);
+    setTimeout(() => setShowCopySuccess(false), 2000);
+  };
 
   useEffect(() => {
     const element = infoRef.current;
@@ -46,13 +54,31 @@ const ContactInfoCard = ({ title, icon, links }: ContactInfoCardProps) => {
         <h3 className="text text-4xl">{title}</h3>
         {links.map((link: ContactLink) =>
           link.url ? (
-            <Link to={`${link.url}`} target="_blank" key={link.description}>
+            <Link
+              className="w-fit"
+              to={`${link.url}`}
+              target="_blank"
+              key={link.description}
+            >
               <button className="whitespace-nowrap text-base underline md:text-lg">
                 {link.description}
               </button>
             </Link>
           ) : (
-            <p key={link.description}>{link.description}</p>
+            <div className="relative" key={link.description}>
+              <p
+                className="flex cursor-pointer items-center gap-x-2 hover:underline"
+                onClick={() => copyToClipboard(link.description)}
+              >
+                {link.description}
+                <MdOutlineContentCopy />
+              </p>
+              {showCopySuccess && (
+                <div className="absolute rounded bg-green-100 px-2 py-1 text-green-600">
+                  {"Copied to clipboard!"}
+                </div>
+              )}
+            </div>
           )
         )}
       </div>

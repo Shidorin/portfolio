@@ -40,7 +40,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   }, [projectRef]);
 
   return (
-    <div className="mb-12 md:mb-28 flex flex-col opacity-0" ref={projectRef}>
+    <div className="mb-12 flex flex-col opacity-0 md:mb-28" ref={projectRef}>
       <ImageSlider
         title={project.title}
         images={[project.image, project.imageMobile]}
@@ -59,21 +59,27 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <div className="mb-4 ml-auto flex gap-x-4">
           {project.demoLink && (
             <Link
-              className="flex items-center gap-x-1 hover:text-primaryText"
+              className="flex items-center gap-x-1 text-dark hover:text-primaryText"
               to={project.demoLink}
               target="_blank"
             >
-              {language.language === "en" ? "Visit the site" : "Odwiedź stronę"}
+              <p>
+                {language.language === "en"
+                  ? "Visit the site"
+                  : "Odwiedź stronę"}
+              </p>
               <HiOutlineLink />
             </Link>
           )}
           {project.sourceCodeLink && (
             <Link
-              className="flex items-center gap-x-1 hover:text-primaryText"
+              className="flex items-center gap-x-1 text-dark hover:text-primaryText"
               to={project.sourceCodeLink}
               target="_blank"
             >
-              {language.language === "en" ? "See the code" : "Zobacz kod"}
+              <p>
+                {language.language === "en" ? "See the code" : "Zobacz kod"}
+              </p>
               <FaGithub />
             </Link>
           )}
@@ -83,13 +89,13 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <div className="my-2 flex flex-wrap gap-2">
         {project.technologies.map((tech: Skill) => (
           <div className="text-white" key={tech.name}>
-            <p className="rounded bg-primaryText px-2 py-0.5 sm:py-1">
+            <p className="rounded bg-primaryText px-2 py-0.5 font-bold sm:py-1">
               {tech.name}
             </p>
           </div>
         ))}
       </div>
-      <p className="mt-2 text-justify">
+      <p className="mt-2 text-justify text-dark">
         {language.language === "en"
           ? project.description
           : project.descriptionPL}
