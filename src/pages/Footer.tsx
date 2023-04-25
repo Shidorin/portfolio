@@ -1,5 +1,5 @@
 import anime from "animejs";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { MdKeyboardArrowUp } from "react-icons/md";
 
 interface IFooterProps {
