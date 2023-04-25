@@ -37,7 +37,6 @@ const Footer = ({ scrollToRef }: IFooterProps) => {
             ref={iconRef}
             onMouseEnter={handleHover}
             onMouseLeave={handleMouseLeave}
-            role="button"
             aria-label="Back to top"
           >
             <MdKeyboardArrowUp className="h-12 w-12 text-white" />
