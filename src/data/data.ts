@@ -182,11 +182,11 @@ export const contactInfoPL = {
       icon: MdOutlineInsertDriveFile,
       links: [
         {
-          description: "Zobacz portfolio po angielsku",
+          description: "Po angielsku",
           url: "Pawlicki-Gil_CV_eng.pdf",
         },
         {
-          description: "Zobacz portfolio po polsku",
+          description: "Po polsku",
           url: "Pawlicki-Gil_CV_eng.pdf",
         },
       ],
