@@ -46,7 +46,7 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
           key={skillSet.title}
           className="flex flex-col items-center md:w-1/3"
         >
-          <h3 className="text-3xl">{skillSet.title}</h3>
+          <h3 className="text-4xl">{skillSet.title}</h3>
           <div className="flex flex-wrap content-center items-center text-xl">
             {skillSet.stacks.map((skill: Skill) => (
               <div
@@ -55,7 +55,7 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
               >
                 <img
                   src={`/icons/${skill.img}`}
-                  className="max-h-16 bg-contain"
+                  className="w-16 bg-contain"
                   alt={skill.name}
                 />
                 <p className="mt-2">{skill.name}</p>

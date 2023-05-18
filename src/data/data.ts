@@ -9,32 +9,32 @@ export const skillData = {
     {
       title: "Frontend",
       stacks: [
-        { name: "HTML5", img: "html5.png" },
-        { name: "CSS3", img: "css.png" },
-        { name: "JavaScript", img: "javascript.png" },
-        { name: "TypeScript", img: "typescript.png" },
-        { name: "React", img: "react.png" },
-        { name: "Redux", img: "redux.png" },
-        { name: "Anime.js", img: "animejs.png" },
+        { name: "HTML5", img: "64html5.png" },
+        { name: "CSS3", img: "64css.png" },
+        { name: "JavaScript", img: "64javascript.png" },
+        { name: "TypeScript", img: "64typescript.png" },
+        { name: "React", img: "64react.png" },
+        { name: "Redux", img: "64redux.png" },
+        { name: "Anime.js", img: "64animejs.png" },
       ],
     },
     {
       title: "Backend",
       stacks: [
-        { name: "Node", img: "node.png" },
-        { name: "Express", img: "express.png" },
-        { name: "Sequelize ORM", img: "sequelize.png" },
-        { name: "RESTful API", img: "restfulapi.png" },
+        { name: "RESTful API", img: "64restfulapi.png" },
+        { name: "Express", img: "64express.png" },
+        { name: "Sequelize ORM", img: "64sequelize.png" },
+        { name: "Node", img: "64node.png" },
       ],
     },
     {
       title: "Tools",
       stacks: [
-        { name: "Agile", img: "agile.png" },
-        { name: "Git", img: "git.png" },
-        { name: "Tailwind", img: "tailwind.png" },
-        { name: "MaterialUI", img: "mui3.png" },
-        { name: "Bootstrap", img: "bootstrap.png" },
+        { name: "MaterialUI", img: "64mui.png" },
+        { name: "Bootstrap", img: "64bootstrap.png" },
+        { name: "Tailwind", img: "64tailwind.png" },
+        { name: "Git", img: "64git.png" },
+        { name: "Agile", img: "64agile.png" },
       ],
     },
   ],
@@ -135,7 +135,7 @@ export const contactInfo = {
   contactButton: "Contact me",
   contact: [
     {
-      title: "View portfolio",
+      title: "View CV",
       icon: MdOutlineInsertDriveFile,
       links: [
         {
@@ -178,7 +178,7 @@ export const contactInfoPL = {
   contactButton: "Wyślij",
   contact: [
     {
-      title: "Zobacz portfolio",
+      title: "Zobacz CV",
       icon: MdOutlineInsertDriveFile,
       links: [
         {

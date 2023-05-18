@@ -175,7 +175,7 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
         <ContactInfoCard
           key={info.title}
           title={info.title}
-          icon={<info.icon className="h-10 w-10" />}
+          icon={<info.icon className="h-16 w-16" />}
           links={info.links}
         />
       ))}
