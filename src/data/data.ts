@@ -140,11 +140,11 @@ export const contactInfo = {
       links: [
         {
           description: "English version",
-          url: "Pawlicki-Gil_CV_eng.pdf",
+          url: "Wojciech_Pawlicki-Gil_CV_eng.pdf",
         },
         {
           description: "Polish version",
-          url: "Pawlicki-Gil_CV_eng.pdf",
+          url: "Wojciech_Pawlicki-Gil_CV.pdf",
         },
       ],
     },
