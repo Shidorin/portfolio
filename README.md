@@ -4,11 +4,18 @@ Hello, I'm Wojtek and this is my portfolio project
 
 # Table of Contents
 
+- [Introduction](#Portfolio)
+- [Demo](#Demo)
+- [Technologies](#Technologies)
+- [Project Structure](#Project Structure)
+
 # Demo
 
 https://wojciech-gil-dev.netlify.app/
 
-# This project was created with
+# Technologies
+
+This project was created with
 
 - TypeScript
 
@@ -22,12 +29,12 @@ https://wojciech-gil-dev.netlify.app/
 
 # Project Structure
 
-- components
+---
 
-  - common
+- components: This directory contains reusable components used throughout the project.
+  - common: This subdirectory includes common components shared across multiple pages or features.
+- data: This directory stores any data files or configurations used by the project.
 
-- data
+- pages: This directory holds the individual pages.
 
-- pages
-
-- store
+- store: This directory contains the state management-related files, such as reducers, actions, and store configuration.
