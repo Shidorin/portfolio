@@ -1,6 +1,6 @@
 # Portfolio
 
-Hello, I'm Wojtek and this is my portfolio project
+Hello, I'm Wojtek and this is my portfolio project.
 
 # Table of Contents
 
@@ -12,6 +12,8 @@ Hello, I'm Wojtek and this is my portfolio project
 # Demo
 
 https://wojciech-gil-dev.netlify.app/
+
+---
 
 # Technologies
 
@@ -27,9 +29,9 @@ This project was created with
 
 - Anime.js
 
-# Project Structure
-
 ---
+
+# Project Structure
 
 - components: This directory contains reusable components used throughout the project.
   - common: This subdirectory includes common components shared across multiple pages or features.
