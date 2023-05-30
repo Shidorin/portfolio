@@ -45,8 +45,10 @@ export const projectsData = {
     {
       id: "1",
       title: "eBookshelf",
-      description: "dummy data",
-      descriptionPL: "",
+      description:
+        "The project is a social network and cataloging book full-stack application. Website guests can browse book catalogs and search for specific books by genre, author, or title. Guests can also sign up to add books to their lists, rate books, and review. It features an hourly updating ranking system based on user scores. Account data are stored with a secure hashing system.",
+      descriptionPL:
+        "Projekt jest społecznościową i katalogującą książki full-stack aplikacją. Goście witryny mogą przeglądać spis książek i wyszukiwać określone książki według gatunku, autora lub tytułu. Goście mogą również zarejestrować się, aby dodawać książki do swoich list, oceniać je i recenzować. Aplikacja posiada aktualizowany co godzinę system rankingowy oparty na ocenach użytkowników. Dane konta są przechowywane za pomocą bezpiecznego systemu haszowania.",
       image: "ebookshelf.webp",
       imageMobile: "ebookshelf-mobile.webp",
       technologies: [
@@ -63,7 +65,8 @@ export const projectsData = {
     {
       id: "2",
       title: "Hotel Website",
-      description: "dummy data",
+      description:
+        "I created the hotel chain website as a tool for learning TypeScript and improving CSS basics. One of the main features is mobile device friendliness. The website provides a hotel filter with a pagination and query string added to the URL. The project does not have a backend, but the entire site is dynamic and prepared for the possibility of replacing dummy data with actual data.",
       descriptionPL:
         "Strona sieci hoteli została stworzona jako narzędzie do nauki TypeScript oraz udoskonalenie podstaw CSS. " +
         "Została przygotowana również pod możliwość korzystania przez urządzenia mobilne. " +
@@ -113,7 +116,7 @@ export const languagesData = {
       home: {
         title: "Hello, I'm Wojtek",
         description:
-          "I'm Frontend Software Engineer, something something, and something something",
+          "I'm Frontend Software Engineer, with a fondness for fantasy literature and a desire to learn and grow. Building innovative and responsive websites that enchant users.",
       },
     },
     {
@@ -122,7 +125,7 @@ export const languagesData = {
       home: {
         title: "Cześć, jestem Wojtek",
         description:
-          "Jestem Frontend Software Engineer, tekst tekst tekst tekst",
+          "Jestem programistą Frontend, z zamiłowaniem do literatury fantasy i chęcią do nauki i rozwoju. Buduję innowacyjne i responsywne strony internetowe, które zachwycą użytkowników.",
       },
     },
   ],

@@ -77,18 +77,18 @@ const HomePage = forwardRef<HTMLDivElement, IHomeProps>(
     return (
       <section className="relative mx-auto min-h-[100dvh] w-auto max-w-7xl px-4">
         <div
-          className="justify-center pt-28 text-dark md:pt-60 xl:pt-72"
+          className="justify-center pt-28 text-dark md:pt-60 xl:pt-72 max-w-4xl"
           ref={ref}
         >
           <h1
             ref={(el) => (elementRefs.current[0] = el as HTMLDivElement)}
-            className="my-12 text-4xl font-bold opacity-0 md:text-5xl"
+            className="my-12 text-4xl font-extrabold opacity-0 md:text-5xl"
           >
             {languageData?.home.title}
           </h1>
           <h1
             ref={(el) => (elementRefs.current[1] = el as HTMLDivElement)}
-            className="my-20 text-3xl font-bold  text-primaryText opacity-0 md:text-5xl lg:my-24"
+            className="my-20 text-3xl font-extrabold text-primaryText opacity-0 md:text-5xl lg:my-24"
           >
             {languageData?.home.description}
           </h1>
