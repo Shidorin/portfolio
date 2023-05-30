@@ -7,7 +7,7 @@ Hello, I'm Wojtek and this is my portfolio project
 - [Introduction](#Portfolio)
 - [Demo](#Demo)
 - [Technologies](#Technologies)
-- [Project Structure](#Project Structure)
+- [Project Structure](#project-structure)
 
 # Demo
 
