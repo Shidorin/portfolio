@@ -45,16 +45,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         title={project.title}
         images={[project.image, project.imageMobile]}
       />
-      {/* <img
-        className="h-auto w-full object-cover object-center brightness-75 filter"
-        src={`/images/${project.image}`}
-        alt={"image of " + project.title}
-      ></img>
-      <img
-        className="h-56 w-full object-contain brightness-75 filter"
-        src={`/images/${project.imageMobile}`}
-        alt={"mobile view of" + project.title}
-      ></img> */}
       <div className="mb-4 flex flex-col md:mt-2 md:flex-row-reverse">
         <div className="mb-4 ml-auto flex gap-x-4">
           {project.demoLink && (
@@ -63,7 +53,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               to={project.demoLink}
               target="_blank"
             >
-              <p>
+              <p className="underline-offset-3 underline">
                 {language.language === "en"
                   ? "Visit the site"
                   : "Odwiedź stronę"}
@@ -77,7 +67,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               to={project.sourceCodeLink}
               target="_blank"
             >
-              <p>
+              <p className="underline-offset-3 underline">
                 {language.language === "en" ? "See the code" : "Zobacz kod"}
               </p>
               <FaGithub />
@@ -89,7 +79,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <div className="my-2 flex flex-wrap gap-2">
         {project.technologies.map((tech: Skill) => (
           <div className="text-white" key={tech.name}>
-            <p className="rounded bg-primaryText px-2 py-0.5 font-bold sm:py-1">
+            <p className="select-none rounded bg-primaryText px-2 py-0.5 font-bold sm:py-1">
               {tech.name}
             </p>
           </div>

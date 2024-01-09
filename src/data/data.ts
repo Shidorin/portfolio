@@ -14,6 +14,7 @@ export const skillData = {
         { name: "JavaScript", img: "64javascript.png" },
         { name: "TypeScript", img: "64typescript.png" },
         { name: "React", img: "64react.png" },
+        { name: "Angular", img: "64angular.png" },
         { name: "Redux", img: "64redux.png" },
         { name: "Anime.js", img: "64animejs.png" },
       ],
@@ -25,6 +26,7 @@ export const skillData = {
         { name: "Express", img: "64express.png" },
         { name: "Sequelize ORM", img: "64sequelize.png" },
         { name: "Node", img: "64node.png" },
+        { name: "gRPC", img: "64grpc.png" },
       ],
     },
     {
@@ -35,6 +37,7 @@ export const skillData = {
         { name: "Tailwind", img: "64tailwind.png" },
         { name: "Git", img: "64git.png" },
         { name: "Agile", img: "64agile.png" },
+        { name: "Jira", img: "64jira.png" },
       ],
     },
   ],

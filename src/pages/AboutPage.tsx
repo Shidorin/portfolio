@@ -53,11 +53,13 @@ const AboutPage = forwardRef<HTMLDivElement>((props, ref) => {
                 key={skill.name}
                 className="m-6 flex w-1/3 flex-shrink-0 flex-grow-0 flex-col items-center justify-center text-center"
               >
-                <img
-                  src={`/icons/${skill.img}`}
-                  className="w-16 bg-contain"
-                  alt={skill.name}
-                />
+                <div className="h-16 w-16 items-center justify-center flex">
+                  <img
+                    src={`/icons/${skill.img}`}
+                    className="m-auto block w-16 bg-auto bg-center bg-no-repeat"
+                    alt={skill.name}
+                  />
+                </div>
                 <p className="mt-2">{skill.name}</p>
               </div>
             ))}
